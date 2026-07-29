@@ -4,12 +4,12 @@
   "status": "active",
   "weight": 1,
   "page": {
-    "title": "Capstan | A grip glove for hands with CMT",
-    "metaDescription": "Capstan is a thin glove with a dial at the wrist. It closes your hand and holds it closed, so you can open jars, turn keys, and hold a fork. No motor, no battery, no surgery.",
-    "eyebrow": "For hands that CMT has made weak",
-    "h1": "Grip again. No motor, no battery, no surgery.",
-    "lead": "Capstan is a thin glove with a dial at the wrist. Cables run along your fingers the same way your own tendons do. Turn the dial and the glove closes your hand, then holds it closed. Open the jar. Turn the key. Hold the fork. Your muscles rest. The glove holds.",
-    "heroProof": "First production run: 500 gloves. Founding members lock in $349.",
+    "title": "Capstan | A glove that helps your hand grip again",
+    "metaDescription": "A glove for weak hands from CMT. Turn the dial and it closes your hand and holds on. Open jars, turn keys, hold your fork. No motor, no battery.",
+    "eyebrow": "For weak hands from CMT",
+    "h1": "A glove that helps your hand grip again.",
+    "lead": "Turn the dial at your wrist. The glove closes your hand and holds on. Open the jar. Turn the key. Hold your fork. No motor. No battery. Nothing to charge.",
+    "heroProof": "First run: 500 gloves. Founding members pay $349, not $399.",
     "ctaLabel": "Save my spot",
     "gallery": [
       { "src": "hero.webp", "alt": "A gloved hand turning a door handle", "caption": "Turn a door handle" },
@@ -19,46 +19,45 @@
       { "src": "ph-writing.svg", "alt": "Placeholder photo: signing a name", "caption": "Sign your name" },
       { "src": "ph-dial.svg", "alt": "Placeholder photo: the dial at the wrist", "caption": "The dial at the wrist" }
     ],
-    "problemHead": "You know this list by heart.",
+    "problemHead": "Weak hands make everything hard.",
     "problemBody": [
-      "Dropping things. Jars and lids. Buttons and fly zips. Signing your name. Coins at the register. Keys and doorknobs.",
-      "You may have been told there is nothing that can be done for your hands. Splints hold your hand still. Jar openers and button hooks help with one task each. None of them give your grip more force."
+      "You drop things. Jars will not open. Buttons take forever. Writing hurts.",
+      "And you have heard it before: there is nothing for your hands. Until now, that was true."
     ],
-    "whyHead": "Hands are the part no device covers.",
+    "whyHead": "Legs get braces. Hands got nothing.",
     "whyBody": [
-      "Researchers asked 937 people with CMT what bothers them most. The top answer was weak hands and fingers. It came in above trouble walking.",
-      "Until now, hand devices could only hold your hand still or protect it. Capstan adds strength."
+      "Most people with CMT can get a brace for their legs. For hands, nothing added strength. Capstan does."
     ],
     "whyStats": [
       { "big": "4 in 10", "small": "people with CMT wear a brace on their legs or ankles" },
       { "big": "Under 1 in 10", "small": "have anything at all for their hands" }
     ],
     "steps": [
-      { "n": 1, "head": "Put it on", "body": "Capstan is a thin glove. It slides on and straps at the wrist, like a bike glove." },
-      { "n": 2, "head": "Turn the dial", "body": "The dial at your wrist pulls the cables and closes your hand. Press the dial against a table if that is easier. One hand is enough." },
-      { "n": 3, "head": "Grip, and rest", "body": "The glove holds your grip so your muscles do not have to. It works like a seatbelt: click, hold, let go when you choose. No motor, no battery, nothing to charge." }
+      { "n": 1, "head": "Put it on", "body": "It is a thin glove. On in seconds, with one hand." },
+      { "n": 2, "head": "Turn the dial", "body": "The dial closes your hand. Press it against a table if that is easier." },
+      { "n": 3, "head": "Grip", "body": "The glove holds on so your muscles do not have to. It lets go when you choose." }
     ],
-    "proofHead": "What we can show so far",
-    "proofStory": "Capstan was first built for Mushruf, a close friend of our founder. He has CMT, and he got his glove free. He wore it every day for six weeks. With the glove on, he opened door handles again on the first try. His result is his own. Results vary from hand to hand.",
-    "proofLab": "We also measured his grip in our lab. With the glove on, he could squeeze about four times harder than with his hand alone. That is one person, on one day. It is not a promise.",
-    "proofCreds": "Capstan comes from engineers who built hardware at Apple. The design won a Red Dot Award in 2026. A patent is filed.",
+    "proofHead": "Meet Mushruf, the first person to wear it.",
+    "proofStory": "Mushruf is a close friend of our founder. He has CMT. The first Capstan was built for him, and he got it free. He has worn it every day for six weeks. With it on, he opens door handles on the first try. His result is his own. Yours may differ.",
+    "proofLab": "In our lab, he could squeeze about four times harder with the glove on. One person, one day. Not a promise.",
+    "proofCreds": "Built by engineers who made hardware at Apple. Red Dot design award, 2026. Patent filed.",
     "offerHead": "One glove. One price. You own it.",
     "offerBullets": [
-      "$399. One price. No subscription.",
-      "Founding members lock in $349.",
-      "First production run: 500 gloves.",
+      "$399. Pay once. No subscription.",
+      "Founding members pay $349.",
+      "First run: 500 gloves.",
       "Nothing to charge. Nothing to replace."
     ],
     "faq": [
-      { "q": "Does it fit the left hand or the right hand?", "a": "Both. We make left and right gloves, and you can wear one on each hand. When we fit you, we start with the hand you use most." },
-      { "q": "How does sizing work?", "a": "Each glove is fit to your hand. After you sign up, we send a short guide with three simple measurements to take. It takes a few minutes with a tape measure." },
-      { "q": "Will it work for my type of CMT?", "a": "Capstan works from the outside of your hand. It closes your fingers and holds them closed. It does not depend on your CMT type. What matters is fit, and we check fit with you before your glove ships." },
-      { "q": "I have arthritis or a stroke, not CMT. Can I use it?", "a": "Our first run is for people with CMT, so we can do one thing well. Join the list and tell us about your hands. We will email you when Capstan is ready for more conditions." },
-      { "q": "Can I put it on with one hand?", "a": "Capstan is built for one-handed use, and we check this with you at your fitting. After you sign up, a short survey asks which hand you use. That way we check the fit that matters most for you." },
+      { "q": "Does it fit the left hand or the right hand?", "a": "Both. We make left and right gloves. You can wear one on each hand." },
+      { "q": "How does sizing work?", "a": "Each glove is made to fit your hand. After you sign up, we send a short guide with three easy measurements." },
+      { "q": "Will it work for my type of CMT?", "a": "Capstan works from the outside of your hand. It closes your fingers and holds them. Your CMT type does not matter. Fit does, and we check fit with you before your glove ships." },
+      { "q": "I have arthritis or a stroke, not CMT. Can I use it?", "a": "Our first run is for people with CMT. Join the list and tell us about your hands. We will email you when it is ready for more conditions." },
+      { "q": "Can I put it on with one hand?", "a": "Capstan is built for one-handed use. We check this with you at your fitting. A short survey after you sign up asks which hand you use." },
       { "q": "What if it does not work for me?", "a": "Send it back within 30 days for a full refund. One email is all it takes." },
-      { "q": "When does it ship?", "a": "The first run of 500 gloves ships this fall. People on the list order first, in the order they joined." },
+      { "q": "When does it ship?", "a": "The first 500 gloves ship this fall. People on the list order first." },
       { "q": "Can I pay with an HSA or FSA card?", "a": "We do not know yet. We will email the list the moment we know." },
-      { "q": "I am researching this for a parent. What should I do?", "a": "Join the list for them. We will send a printable one-page guide you can hand to them, written in plain words." }
+      { "q": "I am researching this for a parent. What should I do?", "a": "Join the list for them. We will send a one-page guide in plain words that you can print and hand over." }
     ],
     "finalHead": "Save your spot in the first 500.",
     "scopeLine": "Capstan is a mechanical grip aid. It does not treat or slow CMT."
