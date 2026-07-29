@@ -46,8 +46,8 @@ const CSS = `
   body {
     margin: 0;
     padding: 40px 20px 72px;
-    background: #FAF6EC;
-    color: #2E2C26;
+    background: #FFFFFF;
+    color: #1E2B38;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     font-size: 16px;
     line-height: 1.6;
@@ -56,9 +56,9 @@ const CSS = `
   h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 4px; }
   h2 { font-size: 1.15rem; margin: 44px 0 14px; }
   h3 { font-size: 1.02rem; margin: 0 0 10px; }
-  .meta { color: #5A574C; font-size: 0.88rem; margin: 0 0 28px; }
+  .meta { color: #51606E; font-size: 0.88rem; margin: 0 0 28px; }
   .eyebrow {
-    color: #8A6D1F;
+    color: #0C6B74;
     font-size: 0.74rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -68,58 +68,58 @@ const CSS = `
   .tiles { display: flex; flex-wrap: wrap; gap: 14px; }
   .tile {
     flex: 1 1 150px;
-    background: #FFFDF6;
-    border: 1px solid #E4DCC8;
+    background: #FFFFFF;
+    border: 1px solid #E2E8EC;
     border-radius: 12px;
     padding: 16px 18px;
   }
   .tile .big { font-size: 1.9rem; font-weight: 700; line-height: 1.2; }
-  .tile .small { color: #5A574C; font-size: 0.86rem; }
+  .tile .small { color: #51606E; font-size: 0.86rem; }
   .tablewrap { overflow-x: auto; }
   table {
     border-collapse: collapse;
     width: 100%;
-    background: #FFFDF6;
-    border: 1px solid #E4DCC8;
+    background: #FFFFFF;
+    border: 1px solid #E2E8EC;
     border-radius: 12px;
     font-size: 0.92rem;
   }
   th, td {
     text-align: right;
     padding: 10px 14px;
-    border-bottom: 1px solid #E4DCC8;
+    border-bottom: 1px solid #E2E8EC;
     white-space: nowrap;
   }
-  th { color: #5A574C; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  th { color: #51606E; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
   th:first-child, td:first-child { text-align: left; }
   tr:last-child td { border-bottom: none; }
-  .muted { color: #5A574C; font-size: 0.88rem; }
-  .status { font-size: 0.78rem; color: #5A574C; }
+  .muted { color: #51606E; font-size: 0.88rem; }
+  .status { font-size: 0.78rem; color: #51606E; }
   .card {
-    background: #FFFDF6;
-    border: 1px solid #E4DCC8;
+    background: #FFFFFF;
+    border: 1px solid #E2E8EC;
     border-radius: 12px;
     padding: 20px 22px;
     margin: 0 0 16px;
   }
   .bar {
-    background: #E4DCC8;
+    background: #E2E8EC;
     border-radius: 999px;
     height: 12px;
     overflow: hidden;
     margin: 6px 0 4px;
   }
-  .fill { background: #3D4A33; height: 100%; border-radius: 999px; }
-  .fill.soft { background: #C09B3A; }
-  .card.warn { border: 2px solid #A0522D; background: #FBEEE4; }
-  .card.warn .eyebrow { color: #A0522D; }
+  .fill { background: #0F3A47; height: 100%; border-radius: 999px; }
+  .fill.soft { background: #B8D2D8; }
+  .card.warn { border: 2px solid #D14E19; background: #FDF0EA; }
+  .card.warn .eyebrow { color: #D14E19; }
   .verdict { font-weight: 700; margin: 14px 0 6px; }
-  .verdict.win { color: #3D4A33; }
+  .verdict.win { color: #0F3A47; }
   .rules {
     margin-top: 48px;
-    border-top: 1px solid #E4DCC8;
+    border-top: 1px solid #E2E8EC;
     padding-top: 20px;
-    color: #5A574C;
+    color: #51606E;
     font-size: 0.9rem;
   }
   .rules ul { margin: 8px 0 0; padding-left: 20px; }

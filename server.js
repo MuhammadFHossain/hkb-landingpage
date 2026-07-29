@@ -70,7 +70,7 @@ const MIME = {
 const DEFAULT_SETTINGS = {
   productName: 'Capstan',
   companyName: 'HumanKind Bionics',
-  contactEmail: 'hello@humankindbionics.com',
+  contactEmail: 'contact@humankindbionics.com',
   stripeLink: '',
   communityUrl: '',
   webhookUrl: '',

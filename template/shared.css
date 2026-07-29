@@ -12,8 +12,8 @@
   --tint: #EFF6F6;         /* light teal wash for alternating sections */
   --ink: #1E2B38;          /* deep navy ink: trust, high contrast on white */
   --soft-ink: #51606E;
-  --cta: #D14E19;          /* the one saturated warm accent; buttons only */
-  --cta-press: #B04013;
+  --cta: #C24515;          /* the one saturated warm accent; buttons only; 5.1:1 with white */
+  --cta-press: #A03A10;
   --cta-ink: #FFFFFF;
   --dark: #0F3A47;         /* deep teal slab for CTA bands */
   --dark-ink: #FFFFFF;
@@ -174,6 +174,9 @@ p:last-child { margin-bottom: 0; }
   gap: 3rem;
   align-items: start;
 }
+/* Grid items default to min-width auto; wide children (the gallery strip)
+   would otherwise force the column past the viewport on small screens. */
+.hero-grid > *, .band-grid > *, .step-row > * { min-width: 0; }
 @media (max-width: 880px) {
   .hero-grid { grid-template-columns: 1fr; gap: 1.75rem; }
 }
@@ -295,6 +298,9 @@ p:last-child { margin-bottom: 0; }
   .band-grid { grid-template-columns: 1fr; gap: 1rem; }
 }
 .band .signup .email { border-color: transparent; }
+/* On the deep teal slab the coral pill alone sits under the 3:1 non-text
+   minimum; a white keyline restores separation for older eyes. */
+.band .btn { border: 2px solid #FFFFFF; }
 .micro-dark { color: var(--dark-soft); font-size: 0.9rem; margin-top: 0.6rem; }
 
 /* Stat band: the number is the design */
