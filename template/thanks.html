@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>You are on the list | {{productName}}</title>
+  <meta name="description" content="Your spot is saved. Reserve your {{productName}} glove with a fully refundable deposit.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#FAF6EC">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared.css">
+</head>
+<body data-cf-page="thanks" data-cf-variant="{{variantId}}">
+  <main>
+
+    <!-- 1. Confirmation + position number -->
+    <section class="ty-hero">
+      <p class="eyebrow">You are on the list</p>
+      <h1>Your spot is saved.</h1>
+      <p class="position" id="position-line" hidden>You are number <strong id="position-number"></strong> on the list.</p>
+      <p class="lead">Check your inbox soon. We will email you before ordering opens, and people on this list order first.</p>
+    </section>
+
+    <!-- 2. Refundable reservation (primary) -->
+    <section class="deposit">
+      <h2>Reserve your glove for ${{depositAmount}}</h2>
+      <p>A ${{depositAmount}} reservation holds your place in the first run of {{firstRunUnits}} gloves. It is fully refundable, any time, for any reason.</p>
+      <p>Your ${{depositAmount}} is credited toward your glove. It also locks your founding price of ${{priceFounding}}. The retail price will be ${{priceRetail}}.</p>
+      <p>This is not a purchase. We will email you when gloves are ready to order, and you can take your ${{depositAmount}} back at any time.</p>
+      {{depositBlockHtml}}
+    </section>
+
+    <!-- 3. Referral / share -->
+    <section class="share">
+      <h2>Know someone else with CMT?</h2>
+      <p>CMT runs in families. If someone you care about is dropping things too, send them this page.</p>
+      <div class="share-actions">
+        <button class="btn btn-secondary" id="copy-link" type="button">Copy the link</button>
+        <a class="btn btn-secondary" id="share-mail" href="{{shareMailHref}}">Share by email</a>
+      </div>
+      <p class="soft">Or send this link: <span id="share-url">{{siteUrl}}</span></p>
+      <p class="soft" id="copy-done" hidden>Link copied.</p>
+    </section>
+
+    <!-- 4. Community -->
+    <section class="community">
+      <h2>The Founding 500</h2>
+      {{communityBlockHtml}}
+    </section>
+
+    <!-- 5. Micro-survey -->
+    <section class="survey">
+      <h2>Three quick questions</h2>
+      <p>Your answers help us fit the first gloves.</p>
+      <form id="survey" method="post" action="/survey">
+        <fieldset>
+          <legend>Who is this glove for?</legend>
+          <label class="opt"><input type="radio" name="who" value="me"> Me</label>
+          <label class="opt"><input type="radio" name="who" value="parent"> A parent</label>
+          <label class="opt"><input type="radio" name="who" value="someone_else"> Someone else</label>
+        </fieldset>
+        <fieldset>
+          <legend>Which hand would it go on?</legend>
+          <label class="opt"><input type="radio" name="hand" value="left"> Left</label>
+          <label class="opt"><input type="radio" name="hand" value="right"> Right</label>
+          <label class="opt"><input type="radio" name="hand" value="both"> Both</label>
+        </fieldset>
+        <fieldset>
+          <legend>Would HSA or FSA eligibility matter to you?</legend>
+          <label class="opt"><input type="radio" name="hsafsa" value="yes"> Yes</label>
+          <label class="opt"><input type="radio" name="hsafsa" value="no"> No</label>
+          <label class="opt"><input type="radio" name="hsafsa" value="not_sure"> Not sure</label>
+        </fieldset>
+        <button class="btn" type="submit">Send my answers</button>
+      </form>
+      <p class="soft" id="survey-done" hidden>Thank you. This helps us build the right gloves first.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>{{companyName}}</strong></p>
+    <p>Contact: {{contactEmail}}</p>
+    <details>
+      <summary>Privacy</summary>
+      <p>We guarantee 100% privacy. Your information will not be shared. We store your
+      email address only so we can write to you about {{productName}}. If you want it
+      removed, email {{contactEmail}} and we will delete it.</p>
+    </details>
+    <p class="scope">{{scopeLine}}</p>
+  </footer>
+
+  {{eventSnippet}}
+</body>
+</html>

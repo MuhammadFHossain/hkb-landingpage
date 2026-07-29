@@ -1,0 +1,330 @@
+/* Capstan funnel design system. Tokens per SPEC.md. */
+
+:root {
+  --bg: #FAF6EC;
+  --ink: #2E2C26;
+  --soft-ink: #5A574C;
+  --cta: #3D4A33;
+  --cta-ink: #FAF6EC;
+  --gold: #C09B3A;
+  --gold-text: #8A6D1F;
+  --line: #E4DCC8;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 720px) {
+  body { font-size: 18px; }
+}
+
+/* Layout: one narrow readable column */
+section {
+  max-width: 68ch;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+}
+section + section { border-top: 1px solid var(--line); }
+
+/* Type */
+h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  margin: 0.5rem 0 1rem;
+}
+h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+p { margin: 0 0 1rem; }
+p:last-child { margin-bottom: 0; }
+
+.eyebrow {
+  color: var(--gold-text);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.lead { font-size: 1.05em; }
+.soft, .privacy, .hero-proof, .position, .creds { color: var(--soft-ink); }
+.privacy { font-size: 0.95rem; margin: 0.75rem 0 0.25rem; }
+.hero-proof { font-size: 0.95rem; }
+
+/* Hero */
+.hero { padding-top: 3.5rem; }
+.hero-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  margin: 1.5rem 0;
+}
+
+/* Signup form: works with or without JS, big targets */
+.signup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: stretch;
+  margin-top: 1rem;
+}
+.email {
+  flex: 1 1 260px;
+  min-height: 56px;
+  font-size: 18px;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: #FFFFFF;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  padding: 0 1.25rem;
+}
+.email::placeholder { color: var(--soft-ink); }
+
+/* Buttons: 56px minimum, one accent color, reserved for CTAs */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  min-width: 200px;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--cta);
+  color: var(--cta-ink);
+  font-family: var(--font-body);
+  font-size: 19px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { background: #32402A; }
+.btn-secondary {
+  background: transparent;
+  color: var(--cta);
+  border: 2px solid var(--cta);
+}
+.btn-secondary:hover { background: rgba(61, 74, 51, 0.08); }
+
+/* Focus states: always visible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* Honeypot: off screen but still submitted with the form */
+.hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Screen-reader-only labels */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* How-it-works steps */
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.steps li {
+  position: relative;
+  padding: 1rem 0 1rem 3.5rem;
+}
+.step-n {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--cta);
+  color: var(--cta-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+.steps h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 0 0 0.25rem;
+}
+.steps p { margin: 0; }
+
+/* Proof */
+.lab {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+/* Offer bullets */
+.bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bullets li {
+  position: relative;
+  padding: 0.5rem 0 0.5rem 1.75rem;
+}
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.1rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--gold);
+}
+
+/* FAQ: native details/summary, 56px rows */
+.faq details { border-bottom: 1px solid var(--line); }
+.faq details:first-of-type { border-top: 1px solid var(--line); }
+.faq summary {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+.faq summary::after {
+  content: "+";
+  margin-left: auto;
+  color: var(--soft-ink);
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq .answer { padding: 0 0 1.25rem; }
+
+/* Thank-you page blocks */
+.share-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.deposit .btn,
+.community .btn { margin-top: 0.5rem; }
+
+/* Micro-survey: big tap targets, no fiddly controls */
+.survey fieldset {
+  border: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+.survey legend {
+  font-weight: 600;
+  padding: 0 0 0.5rem;
+}
+.survey .opt {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 48px;
+  cursor: pointer;
+}
+.survey input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  accent-color: var(--cta);
+}
+
+/* Footer */
+footer {
+  max-width: 68ch;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 6.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--soft-ink);
+  font-size: 0.95rem;
+}
+footer strong { color: var(--ink); }
+footer details summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+footer .scope { margin-top: 1rem; }
+
+/* Sticky mobile CTA bar. The event snippet adds .show once the hero
+   scrolls out of view; if IntersectionObserver is missing, the snippet
+   adds .show right away (plain sticky fallback). */
+.sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: none;
+  padding: 0.75rem 1rem;
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  transform: translateY(110%);
+  transition: transform 0.25s ease;
+}
+.sticky-cta.show { transform: translateY(0); }
+.sticky-cta .btn { width: 100%; }
+@media (max-width: 720px) {
+  .sticky-cta { display: block; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

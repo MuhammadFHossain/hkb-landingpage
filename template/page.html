@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{metaDescription}}">
+  <meta name="theme-color" content="#FAF6EC">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared.css">
+</head>
+<body data-cf-page="landing" data-cf-variant="{{variantId}}">
+  <main>
+
+    <!-- 1. Hero -->
+    <section class="hero" id="hero">
+      <p class="eyebrow">{{eyebrow}}</p>
+      <h1>{{h1}}</h1>
+      <p class="lead">{{lead}}</p>
+      <img class="hero-img" src="/assets/{{heroImage}}" alt="{{heroImageAlt}}">
+      <form class="signup" id="signup" method="post" action="/subscribe">
+        <label class="visually-hidden" for="email-hero">Email address</label>
+        <input id="email-hero" class="email" type="email" name="email" required
+               autocomplete="email" inputmode="email" placeholder="Your email address">
+        <input class="hp" type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit">{{ctaLabel}}</button>
+      </form>
+      <p class="privacy">We guarantee 100% privacy. Your information will not be shared.</p>
+      <p class="hero-proof">{{heroProof}}</p>
+    </section>
+
+    <!-- 2. The problem, in their words -->
+    <section class="problem">
+      <h2>{{problemHead}}</h2>
+      {{problemBodyHtml}}
+    </section>
+
+    <!-- 3. Why hands, why nothing exists -->
+    <section class="why">
+      <h2>{{whyHead}}</h2>
+      {{whyBodyHtml}}
+    </section>
+
+    <!-- 4. How it works, 3 steps -->
+    <section class="how">
+      <h2>How it works</h2>
+      <ol class="steps">
+        {{stepsHtml}}
+      </ol>
+    </section>
+
+    <!-- 5. Proof -->
+    <section class="proof">
+      <h2>{{proofHead}}</h2>
+      <p>{{proofStory}}</p>
+      <p class="lab">{{proofLab}}</p>
+      <p class="creds">{{proofCreds}}</p>
+    </section>
+
+    <!-- 6. The offer -->
+    <section class="offer">
+      <h2>{{offerHead}}</h2>
+      <ul class="bullets">
+        {{offerBulletsHtml}}
+      </ul>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="faq">
+      <h2>Questions people ask</h2>
+      {{faqHtml}}
+    </section>
+
+    <!-- 8. Final CTA -->
+    <section class="final">
+      <h2>{{finalHead}}</h2>
+      <form class="signup" id="signup-final" method="post" action="/subscribe">
+        <label class="visually-hidden" for="email-final">Email address</label>
+        <input id="email-final" class="email" type="email" name="email" required
+               autocomplete="email" inputmode="email" placeholder="Your email address">
+        <input class="hp" type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit">{{ctaLabel}}</button>
+      </form>
+      <p class="privacy">We guarantee 100% privacy. Your information will not be shared.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>{{companyName}}</strong></p>
+    <p>Contact: {{contactEmail}}</p>
+    <details>
+      <summary>Privacy</summary>
+      <p>We guarantee 100% privacy. Your information will not be shared. We store your
+      email address only so we can write to you about {{productName}}. If you want it
+      removed, email {{contactEmail}} and we will delete it.</p>
+    </details>
+    <p class="scope">{{scopeLine}}</p>
+  </footer>
+
+  <!-- Sticky mobile CTA bar; the event snippet shows it after the hero scrolls away -->
+  <div class="sticky-cta" id="sticky-cta">
+    <a class="btn" href="#signup">{{ctaLabel}}</a>
+  </div>
+
+  {{eventSnippet}}
+</body>
+</html>

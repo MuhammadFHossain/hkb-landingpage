@@ -1,0 +1,16 @@
+{
+  "productName": "Capstan",
+  "companyName": "HumanKind Bionics",
+  "contactEmail": "hello@humankindbionics.com",
+  "stripeLink": "",
+  "communityUrl": "",
+  "webhookUrl": "",
+  "clarityId": "xtssf778gc",
+  "siteUrl": "https://humankindbionics.com",
+  "control": "capstan-cmt",
+  "sequentialN": 300,
+  "priceRetail": 399,
+  "priceFounding": 349,
+  "depositAmount": 25,
+  "firstRunUnits": 500
+}
