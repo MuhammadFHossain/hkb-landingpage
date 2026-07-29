@@ -11,8 +11,13 @@
     "lead": "Our founder spent years building hardware at Apple. Then Mushruf, his close friend, started dropping cups. Mushruf has CMT, and he was told there was nothing for his hands. So we built Capstan. It is a thin glove with a dial at the wrist. The dial closes your hand and holds it closed. No motor, no battery, no surgery.",
     "heroProof": "First production run: 500 gloves. Founding members lock in $349.",
     "ctaLabel": "Save my spot",
-    "heroImage": "hero.webp",
-    "heroImageAlt": "A hand wearing the Capstan glove, with a small dial at the wrist",
+    "gallery": [
+      { "src": "ph-dial.svg", "alt": "Placeholder photo: the dial at the wrist", "caption": "The dial at the wrist" },
+      { "src": "hero.webp", "alt": "A gloved hand turning a door handle", "caption": "Turn a door handle" },
+      { "src": "hero-jar.webp", "alt": "Two gloved hands opening a glass jar", "caption": "Open a jar" },
+      { "src": "ph-key.svg", "alt": "Placeholder photo: turning a key", "caption": "Turn a key" },
+      { "src": "ph-writing.svg", "alt": "Placeholder photo: signing a name", "caption": "Sign your name" }
+    ],
     "problemHead": "Maybe you know this story.",
     "problemBody": [
       "Dropping things. Jars and lids. Buttons and fly zips. Signing your name. Coins and keys.",
@@ -20,18 +25,22 @@
     ],
     "whyHead": "Why an engineer, not a brace maker.",
     "whyBody": [
-      "In a study of 937 people with CMT, hand and finger weakness ranked as the most important symptom. It ranked above trouble walking. Still, about 4 in 10 people with CMT wear a leg or ankle brace. Fewer than 1 in 10 have anything for their hands.",
-      "Every device so far holds the hand in place or protects it. We treated grip as a hardware problem instead. Add force from the outside. Hold it with a ratchet. Keep the glove thin."
+      "Researchers asked 937 people with CMT what bothers them most. The top answer was weak hands and fingers. It came in above trouble walking.",
+      "Every device so far holds the hand in place or protects it. We treated grip as a hardware problem instead. Add strength from the outside. Hold it as long as it is needed. Keep the glove thin."
+    ],
+    "whyStats": [
+      { "big": "4 in 10", "small": "people with CMT wear a leg or ankle brace" },
+      { "big": "Under 1 in 10", "small": "have anything at all for their hands" }
     ],
     "steps": [
       { "n": 1, "head": "Put it on", "body": "Capstan is a thin glove. It slides on and straps at the wrist, like a bike glove." },
       { "n": 2, "head": "Turn the dial", "body": "The dial at your wrist pulls the cables and closes your hand. Press the dial against a table if that is easier. One hand is enough." },
-      { "n": 3, "head": "Grip, and rest", "body": "A ratchet holds your grip so your muscles do not have to. No motor, no battery, no app, nothing to charge." }
+      { "n": 3, "head": "Grip, and rest", "body": "The glove holds your grip so your muscles do not have to. It works like a seatbelt: click, hold, let go when you choose. No motor, no battery, nothing to charge." }
     ],
     "proofHead": "What we can show so far",
     "proofStory": "Mushruf, a close friend of our founder, was the first person to wear Capstan. He has CMT, and he got his glove free. He wore it every day for six weeks. With the glove on, he opened door handles again on the first try. His result is his own. Results vary from hand to hand.",
-    "proofLab": "In our lab, one user with CMT measured 8N of grip force without Capstan and 31N with it. That is one person's measured result in our lab, not a typical outcome.",
-    "proofCreds": "Capstan was designed by engineers from the founding hardware team of Apple Vision Pro. It won a Red Dot Award in 2026. A patent is filed.",
+    "proofLab": "We also measured his grip in our lab. With the glove on, he could squeeze about four times harder than with his hand alone. That is one person, on one day. It is not a promise.",
+    "proofCreds": "Capstan comes from engineers who built hardware at Apple. The design won a Red Dot Award in 2026. A patent is filed.",
     "offerHead": "One glove. One price. You own it.",
     "offerBullets": [
       "$399. One price. No subscription.",
@@ -42,7 +51,7 @@
     "faq": [
       { "q": "Does it fit the left hand or the right hand?", "a": "Both. We make left and right gloves, and you can wear one on each hand. When we fit you, we start with the hand you use most." },
       { "q": "How does sizing work?", "a": "Each glove is fit to your hand. After you sign up, we send a short guide with three simple measurements to take. It takes a few minutes with a tape measure." },
-      { "q": "Will it work for my type of CMT?", "a": "Capstan works from the outside of your hand. Cables close your fingers and a ratchet holds them closed. It does not depend on your CMT type. What matters is fit, and we check fit with you before your glove ships." },
+      { "q": "Will it work for my type of CMT?", "a": "Capstan works from the outside of your hand. It closes your fingers and holds them closed. It does not depend on your CMT type. What matters is fit, and we check fit with you before your glove ships." },
       { "q": "I have arthritis or a stroke, not CMT. Can I use it?", "a": "Our first run is for people with CMT, so we can do one thing well. Join the list and tell us about your hands. We will email you when Capstan is ready for more conditions." },
       { "q": "Can I put it on with one hand?", "a": "Capstan is built for one-handed use, and we check this with you at your fitting. After you sign up, a short survey asks which hand you use. That way we check the fit that matters most for you." },
       { "q": "What if it does not work for me?", "a": "Send it back within 30 days for a full refund. One email is all it takes." },

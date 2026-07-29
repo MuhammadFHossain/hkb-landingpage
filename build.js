@@ -262,6 +262,27 @@ function bulletsHtml(bullets) {
   return bullets.map((b) => '<li>' + escapeHtml(b) + '</li>').join('\n        ');
 }
 
+function galleryHtml(gallery) {
+  return gallery
+    .map(
+      (g) =>
+        '<figure class="tile"><img src="/assets/' + escapeHtml(g.src) + '" alt="' +
+        escapeHtml(g.alt) + '" loading="lazy" width="800" height="600">' +
+        '<figcaption>' + escapeHtml(g.caption) + '</figcaption></figure>'
+    )
+    .join('\n        ');
+}
+
+function whyStatsHtml(stats) {
+  return stats
+    .map(
+      (s) =>
+        '<div class="stat"><span class="stat-big">' + escapeHtml(s.big) + '</span>' +
+        '<span class="stat-small">' + escapeHtml(s.small) + '</span></div>'
+    )
+    .join('\n        ');
+}
+
 function faqHtml(faq) {
   return faq
     .map(
@@ -278,10 +299,10 @@ function faqHtml(faq) {
 
 const PAGE_STRING_KEYS = [
   'title', 'metaDescription', 'eyebrow', 'h1', 'lead', 'heroProof', 'ctaLabel',
-  'heroImage', 'heroImageAlt', 'problemHead', 'whyHead', 'proofHead',
+  'problemHead', 'whyHead', 'proofHead',
   'proofStory', 'proofLab', 'proofCreds', 'offerHead', 'finalHead', 'scopeLine'
 ];
-const PAGE_ARRAY_KEYS = ['problemBody', 'whyBody', 'steps', 'offerBullets', 'faq'];
+const PAGE_ARRAY_KEYS = ['gallery', 'problemBody', 'whyBody', 'whyStats', 'steps', 'offerBullets', 'faq'];
 
 function validateVariant(variant, file) {
   const problems = [];
@@ -308,6 +329,24 @@ function validateVariant(variant, file) {
     if (!Array.isArray(page[key]) || page[key].length === 0) {
       problems.push(where + ': page key "' + key + '" must be a non-empty array');
     }
+  }
+  if (Array.isArray(page.gallery)) {
+    page.gallery.forEach((g, i) => {
+      for (const key of ['src', 'alt', 'caption']) {
+        if (!g || typeof g[key] !== 'string' || g[key].trim() === '') {
+          problems.push(where + ': gallery[' + i + '] missing "' + key + '"');
+        }
+      }
+    });
+  }
+  if (Array.isArray(page.whyStats)) {
+    page.whyStats.forEach((s, i) => {
+      for (const key of ['big', 'small']) {
+        if (!s || typeof s[key] !== 'string' || s[key].trim() === '') {
+          problems.push(where + ': whyStats[' + i + '] missing "' + key + '"');
+        }
+      }
+    });
   }
   if (Array.isArray(page.steps)) {
     if (page.steps.length !== 3) {
@@ -387,8 +426,8 @@ function main() {
   const withClarity = (html) =>
     claritySnippet ? html.replace('</head>', '  ' + claritySnippet + '\n</head>') : html;
 
-  const pageTemplate = fs.readFileSync(path.join(TEMPLATE_DIR, 'page.html'), 'utf8');
-  const thanksTemplate = fs.readFileSync(path.join(TEMPLATE_DIR, 'thanks.html'), 'utf8');
+  let pageTemplate = fs.readFileSync(path.join(TEMPLATE_DIR, 'page.html'), 'utf8');
+  let thanksTemplate = fs.readFileSync(path.join(TEMPLATE_DIR, 'thanks.html'), 'utf8');
 
   const variantFiles = fs
     .readdirSync(VARIANTS_DIR)
@@ -421,6 +460,16 @@ function main() {
   if (fs.existsSync(ASSETS_DIR)) {
     fs.cpSync(ASSETS_DIR, path.join(DIST, 'assets'), { recursive: true });
   }
+
+  // Cache-busting: stamp the stylesheet link with a content hash so a
+  // redeploy never leaves returning visitors on a stale stylesheet.
+  const cssHash = require('crypto')
+    .createHash('sha256')
+    .update(fs.readFileSync(path.join(DIST, 'shared.css')))
+    .digest('hex')
+    .slice(0, 10);
+  pageTemplate = pageTemplate.replace('href="/shared.css"', 'href="/shared.css?v=' + cssHash + '"');
+  thanksTemplate = thanksTemplate.replace('href="/shared.css"', 'href="/shared.css?v=' + cssHash + '"');
 
   const snippetHtml = '<script>\n' + EVENT_SNIPPET + '\n</script>';
 
@@ -462,6 +511,8 @@ function main() {
       depositAmount: escapeHtml(settings.depositAmount),
       firstRunUnits: escapeHtml(settings.firstRunUnits),
       // pre-built HTML fragments
+      galleryHtml: galleryHtml(page.gallery),
+      whyStatsHtml: whyStatsHtml(page.whyStats),
       problemBodyHtml: parasHtml(page.problemBody),
       whyBodyHtml: parasHtml(page.whyBody),
       stepsHtml: stepsHtml(page.steps),

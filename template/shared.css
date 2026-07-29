@@ -72,14 +72,75 @@ p:last-child { margin-bottom: 0; }
 
 /* Hero */
 .hero { padding-top: 3.5rem; }
-.hero-img {
+
+/* Hero gallery: a horizontal strip of photos. Scrolls inside its own box,
+   never the page. Snap points make it easy to flick through on a phone. */
+.gallery {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0 0.25rem;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+}
+.gallery .tile {
+  flex: 0 0 min(78%, 340px);
+  scroll-snap-align: start;
+  margin: 0;
+}
+.gallery .tile img {
   display: block;
   width: 100%;
-  max-width: 100%;
   height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border: 1px solid var(--line);
   border-radius: 16px;
-  margin: 1.5rem 0;
+  background: #F3EDDD;
+}
+.gallery .tile figcaption {
+  font-size: 0.95rem;
+  color: var(--soft-ink);
+  margin-top: 0.4rem;
+  text-align: center;
+}
+.gallery-note {
+  font-size: 0.9rem;
+  color: var(--soft-ink);
+  margin: 0 0 1.25rem;
+}
+
+/* Big stat tiles: numbers people can take in at a glance */
+.stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+@media (max-width: 480px) {
+  .stat-row { grid-template-columns: 1fr; }
+}
+.stat {
+  background: #F6F1E2;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.25rem 1.25rem 1.1rem;
+}
+.stat-big {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.stat-small {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--soft-ink);
+  font-size: 1rem;
 }
 
 /* Signup form: works with or without JS, big targets */

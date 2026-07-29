@@ -20,7 +20,10 @@
       <p class="eyebrow">{{eyebrow}}</p>
       <h1>{{h1}}</h1>
       <p class="lead">{{lead}}</p>
-      <img class="hero-img" src="/assets/{{heroImage}}" alt="{{heroImageAlt}}">
+      <div class="gallery" role="group" aria-label="Photos of the glove in use">
+        {{galleryHtml}}
+      </div>
+      <p class="gallery-note">Placeholder pictures. Real photos of the glove are being shot now.</p>
       <form class="signup" id="signup" method="post" action="/subscribe">
         <label class="visually-hidden" for="email-hero">Email address</label>
         <input id="email-hero" class="email" type="email" name="email" required
@@ -42,6 +45,9 @@
     <section class="why">
       <h2>{{whyHead}}</h2>
       {{whyBodyHtml}}
+      <div class="stat-row">
+        {{whyStatsHtml}}
+      </div>
     </section>
 
     <!-- 4. How it works, 3 steps -->

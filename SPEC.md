@@ -69,9 +69,13 @@ Server-only env vars:
     "eyebrow": "...", "h1": "...", "lead": "...",
     "heroProof": "...",           // short line under CTA, e.g. scarcity line
     "ctaLabel": "Save my spot",
-    "heroImage": "hero.webp", "heroImageAlt": "...",
+    "gallery": [{"src":"hero.webp","alt":"...","caption":"Open a jar"}, ...],
+                                  // horizontal photo strip in the hero; placeholders
+                                  // live in assets/ph-*.svg until real shots exist
     "problemHead": "...", "problemBody": ["para", "para"],
     "whyHead": "...", "whyBody": ["para", "para"],
+    "whyStats": [{"big":"4 in 10","small":"wear a leg brace"}, ...],
+                                  // big scannable stat tiles under whyBody
     "steps": [{"n":1,"head":"...","body":"..."}, ...3 items],
     "proofHead": "...",
     "proofStory": "...",          // Mushruf paragraph, relationship disclosed
