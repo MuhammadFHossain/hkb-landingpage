@@ -4,20 +4,24 @@
    inline email forms (LaunchBoom pages), huge-numeral stat bands, card
    modules over prose. One accent color, used only on CTAs. */
 
+/* Color theory: 60-30-10. 60% white base, 30% cool trust tones (navy ink,
+   deep teal slab, light teal tints), 10% warm coral accent on CTAs only.
+   Complementary warm-vs-cool: teal recedes and reassures, coral advances. */
 :root {
-  --bg: #FAF6EC;
-  --tint: #F5EFE0;
-  --ink: #2E2C26;
-  --soft-ink: #5A574C;
-  --cta: #C64718;          /* the one saturated accent; buttons only */
-  --cta-press: #A83C13;
+  --bg: #FFFFFF;
+  --tint: #EFF6F6;         /* light teal wash for alternating sections */
+  --ink: #1E2B38;          /* deep navy ink: trust, high contrast on white */
+  --soft-ink: #51606E;
+  --cta: #D14E19;          /* the one saturated warm accent; buttons only */
+  --cta-press: #B04013;
   --cta-ink: #FFFFFF;
-  --dark: #26241F;         /* warm charcoal slab for CTA bands */
-  --dark-ink: #FAF6EC;
-  --dark-soft: #C9C2B2;
-  --line: #E4DCC8;
-  --gold-text: #8A6D1F;
+  --dark: #0F3A47;         /* deep teal slab for CTA bands */
+  --dark-ink: #FFFFFF;
+  --dark-soft: #B8D2D8;
+  --line: #E2E8EC;
+  --gold-text: #0C6B74;    /* eyebrow + check accents: teal, legible on white */
   --card: #FFFFFF;
+  --shadow: 0 2px 12px rgba(30, 43, 56, 0.06);
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 }
@@ -236,6 +240,7 @@ p:last-child { margin-bottom: 0; }
 
 /* Problem section */
 .problem { background: var(--tint); }
+.problem h2, .stats h2 { color: var(--ink); }
 
 /* How it works: numbered image rows */
 .step-row {
@@ -307,6 +312,7 @@ p:last-child { margin-bottom: 0; }
   border-radius: 20px;
   padding: 2rem 1.75rem 1.75rem;
   text-align: center;
+  box-shadow: var(--shadow);
 }
 .stat-big {
   display: block;
@@ -329,6 +335,7 @@ p:last-child { margin-bottom: 0; }
   border: 1px solid var(--line);
   border-radius: 20px;
   padding: 2.25rem 2rem;
+  box-shadow: var(--shadow);
 }
 .proof-card .lab { color: var(--soft-ink); font-size: 0.98rem; margin-top: 1rem; }
 .chips {
@@ -356,6 +363,7 @@ p:last-child { margin-bottom: 0; }
   border-radius: 14px;
   margin-top: 0.75rem;
   padding: 0 1.25rem;
+  box-shadow: var(--shadow);
 }
 .faq summary {
   display: flex;
@@ -391,6 +399,7 @@ p:last-child { margin-bottom: 0; }
   border-radius: 16px;
   padding: 1.25rem 1rem;
   background: var(--card);
+  box-shadow: var(--shadow);
 }
 .badge-row strong { display: block; font-size: 1.05rem; }
 .badge-row span { color: var(--soft-ink); font-size: 0.92rem; }
