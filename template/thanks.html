@@ -27,8 +27,9 @@
     <!-- 2. Refundable reservation (primary) -->
     <section class="deposit">
       <h2>Reserve your glove for ${{depositAmount}}</h2>
+      <p class="price-anchor"><s>${{priceRetail}}</s> <strong>${{priceFounding}} founding price</strong><span class="save-chip">You save ${{saveAmount}}</span></p>
       <p>A ${{depositAmount}} reservation holds your place in the first run of {{firstRunUnits}} gloves. It is fully refundable, any time, for any reason.</p>
-      <p>Your ${{depositAmount}} is credited toward your glove. It also locks your founding price of ${{priceFounding}}. The retail price will be ${{priceRetail}}.</p>
+      <p>Your ${{depositAmount}} is credited toward your glove. It also locks your founding price of ${{priceFounding}}.</p>
       <p>This is not a purchase. We will email you when gloves are ready to order, and you can take your ${{depositAmount}} back at any time.</p>
       {{depositBlockHtml}}
     </section>

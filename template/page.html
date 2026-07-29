@@ -9,88 +9,145 @@
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/shared.css">
 </head>
 <body data-cf-page="landing" data-cf-variant="{{variantId}}">
   <main>
 
-    <!-- 1. Hero -->
+    <!-- 1. Hero: copy + form left, product large right -->
     <section class="hero" id="hero">
-      <p class="eyebrow">{{eyebrow}}</p>
-      <h1>{{h1}}</h1>
-      <p class="lead">{{lead}}</p>
-      <div class="gallery" role="group" aria-label="Photos of the glove in use">
-        {{galleryHtml}}
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">{{eyebrow}}</p>
+          <h1>{{h1}}</h1>
+          <p class="lead">{{lead}}</p>
+          <form class="signup" id="signup" method="post" action="/subscribe">
+            <label class="visually-hidden" for="email-hero">Email address</label>
+            <input id="email-hero" class="email" type="email" name="email" required
+                   autocomplete="email" inputmode="email" placeholder="Your email address">
+            <input class="hp" type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn" type="submit">{{ctaLabel}}</button>
+          </form>
+          <p class="micro">Free to join. Nothing to pay today.</p>
+          <p class="privacy">We guarantee 100% privacy. Your information will not be shared.</p>
+          <ul class="mini-badges" aria-label="Highlights">
+            <li>No motor, no battery</li>
+            <li>Fits left or right</li>
+            <li>30-day returns</li>
+          </ul>
+        </div>
+        <div class="hero-media">
+          <img class="hero-main" src="/assets/{{heroMain}}" alt="{{heroMainAlt}}"
+               width="800" height="600" fetchpriority="high">
+          <div class="gallery" role="group" aria-label="More photos">
+            {{galleryHtml}}
+          </div>
+          <p class="gallery-note">Placeholder pictures. Real photos of the glove are being shot now.</p>
+        </div>
       </div>
-      <p class="gallery-note">Placeholder pictures. Real photos of the glove are being shot now.</p>
-      <form class="signup" id="signup" method="post" action="/subscribe">
-        <label class="visually-hidden" for="email-hero">Email address</label>
-        <input id="email-hero" class="email" type="email" name="email" required
-               autocomplete="email" inputmode="email" placeholder="Your email address">
-        <input class="hp" type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button class="btn" type="submit">{{ctaLabel}}</button>
-      </form>
-      <p class="privacy">We guarantee 100% privacy. Your information will not be shared.</p>
-      <p class="hero-proof">{{heroProof}}</p>
     </section>
 
-    <!-- 2. The problem, in their words -->
+    <!-- 2. The problem, short and recognizable -->
     <section class="problem">
-      <h2>{{problemHead}}</h2>
-      {{problemBodyHtml}}
+      <div class="narrow center">
+        <h2>{{problemHead}}</h2>
+        {{problemBodyHtml}}
+      </div>
     </section>
 
-    <!-- 3. Why hands, why nothing exists -->
-    <section class="why">
-      <h2>{{whyHead}}</h2>
-      {{whyBodyHtml}}
-      <div class="stat-row">
+    <!-- 3. How it works: numbered image blocks -->
+    <section class="how" id="how">
+      <div class="wrap">
+        <h2 class="center">How it works</h2>
+        {{stepsHtml}}
+      </div>
+    </section>
+
+    <!-- 4. CTA band (dark slab) -->
+    <section class="band">
+      <div class="wrap band-grid">
+        <div class="band-copy">
+          <h2>Be one of the first 500.</h2>
+          <p>Ordering opens this fall. People on the list go first and lock the founding price.</p>
+        </div>
+        <div class="band-form">
+          <form class="signup" id="signup-band" method="post" action="/subscribe">
+            <label class="visually-hidden" for="email-band">Email address</label>
+            <input id="email-band" class="email" type="email" name="email" required
+                   autocomplete="email" inputmode="email" placeholder="Your email address">
+            <input class="hp" type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn" type="submit">{{ctaLabel}}</button>
+          </form>
+          <p class="micro-dark">Free to join. Nothing to pay today.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Stat band: the numbers are the design -->
+    <section class="stats">
+      <div class="narrow center">
+        <h2>{{whyHead}}</h2>
+        {{whyBodyHtml}}
+      </div>
+      <div class="wrap stat-row">
         {{whyStatsHtml}}
       </div>
     </section>
 
-    <!-- 4. How it works, 3 steps -->
-    <section class="how">
-      <h2>How it works</h2>
-      <ol class="steps">
-        {{stepsHtml}}
-      </ol>
-    </section>
-
-    <!-- 5. Proof -->
+    <!-- 6. Proof: founder-note style card + credential chips -->
     <section class="proof">
-      <h2>{{proofHead}}</h2>
-      <p>{{proofStory}}</p>
-      <p class="lab">{{proofLab}}</p>
-      <p class="creds">{{proofCreds}}</p>
-    </section>
-
-    <!-- 6. The offer -->
-    <section class="offer">
-      <h2>{{offerHead}}</h2>
-      <ul class="bullets">
-        {{offerBulletsHtml}}
-      </ul>
+      <div class="narrow">
+        <div class="proof-card">
+          <h2>{{proofHead}}</h2>
+          <p>{{proofStory}}</p>
+          <p class="lab">{{proofLab}}</p>
+        </div>
+        <ul class="chips" aria-label="Credentials">
+          <li>Built by ex-Apple hardware engineers</li>
+          <li>Red Dot design award, 2026</li>
+          <li>Patent filed</li>
+        </ul>
+      </div>
     </section>
 
     <!-- 7. FAQ -->
     <section class="faq">
-      <h2>Questions people ask</h2>
-      {{faqHtml}}
+      <div class="narrow">
+        <h2 class="center">Questions people ask</h2>
+        {{faqHtml}}
+      </div>
     </section>
 
-    <!-- 8. Final CTA -->
-    <section class="final">
-      <h2>{{finalHead}}</h2>
-      <form class="signup" id="signup-final" method="post" action="/subscribe">
-        <label class="visually-hidden" for="email-final">Email address</label>
-        <input id="email-final" class="email" type="email" name="email" required
-               autocomplete="email" inputmode="email" placeholder="Your email address">
-        <input class="hp" type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button class="btn" type="submit">{{ctaLabel}}</button>
-      </form>
-      <p class="privacy">We guarantee 100% privacy. Your information will not be shared.</p>
+    <!-- 8. Final CTA band -->
+    <section class="band">
+      <div class="wrap band-grid">
+        <div class="band-copy">
+          <h2>{{finalHead}}</h2>
+          <p>It takes ten seconds. We email you when ordering opens.</p>
+        </div>
+        <div class="band-form">
+          <form class="signup" id="signup-final" method="post" action="/subscribe">
+            <label class="visually-hidden" for="email-final">Email address</label>
+            <input id="email-final" class="email" type="email" name="email" required
+                   autocomplete="email" inputmode="email" placeholder="Your email address">
+            <input class="hp" type="text" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn" type="submit">{{ctaLabel}}</button>
+          </form>
+          <p class="micro-dark">We guarantee 100% privacy. Your information will not be shared.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Guarantee badges -->
+    <section class="badges">
+      <div class="wrap">
+        <ul class="badge-row">
+          <li><strong>30-day returns</strong><span>Full refund. One email.</span></li>
+          <li><strong>No battery, ever</strong><span>Nothing to charge or replace.</span></li>
+          <li><strong>Fit checked with you</strong><span>Before your glove ships.</span></li>
+        </ul>
+      </div>
     </section>
 
   </main>
@@ -107,7 +164,7 @@
     <p class="scope">{{scopeLine}}</p>
   </footer>
 
-  <!-- Sticky mobile CTA bar; the event snippet shows it after the hero scrolls away -->
+  <!-- Sticky mobile CTA bar; shows after the hero scrolls away -->
   <div class="sticky-cta" id="sticky-cta">
     <a class="btn" href="#signup">{{ctaLabel}}</a>
   </div>

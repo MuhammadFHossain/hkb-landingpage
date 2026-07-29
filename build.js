@@ -251,11 +251,14 @@ function stepsHtml(steps) {
   return steps
     .map(
       (s) =>
-        '<li><span class="step-n" aria-hidden="true">' + escapeHtml(s.n) + '</span>' +
+        '<div class="step-row">' +
+        '<div class="step-media"><img src="/assets/' + escapeHtml(s.img) + '" alt="' +
+        escapeHtml(s.alt) + '" loading="lazy" width="800" height="600"></div>' +
+        '<div class="step-copy"><span class="step-n" aria-hidden="true">' + escapeHtml(s.n) + '</span>' +
         '<h3>' + escapeHtml(s.head) + '</h3>' +
-        '<p>' + escapeHtml(s.body) + '</p></li>'
+        '<p>' + escapeHtml(s.body) + '</p></div></div>'
     )
-    .join('\n        ');
+    .join('\n      ');
 }
 
 function bulletsHtml(bullets) {
@@ -298,11 +301,11 @@ function faqHtml(faq) {
 // ---------------------------------------------------------------------------
 
 const PAGE_STRING_KEYS = [
-  'title', 'metaDescription', 'eyebrow', 'h1', 'lead', 'heroProof', 'ctaLabel',
+  'title', 'metaDescription', 'eyebrow', 'h1', 'lead', 'ctaLabel',
   'problemHead', 'whyHead', 'proofHead',
-  'proofStory', 'proofLab', 'proofCreds', 'offerHead', 'finalHead', 'scopeLine'
+  'proofStory', 'proofLab', 'finalHead', 'scopeLine'
 ];
-const PAGE_ARRAY_KEYS = ['gallery', 'problemBody', 'whyBody', 'whyStats', 'steps', 'offerBullets', 'faq'];
+const PAGE_ARRAY_KEYS = ['gallery', 'problemBody', 'whyBody', 'whyStats', 'steps', 'faq'];
 
 function validateVariant(variant, file) {
   const problems = [];
@@ -353,7 +356,7 @@ function validateVariant(variant, file) {
       problems.push(where + ': "steps" must have exactly 3 items, got ' + page.steps.length);
     }
     page.steps.forEach((s, i) => {
-      for (const key of ['n', 'head', 'body']) {
+      for (const key of ['n', 'head', 'body', 'img', 'alt']) {
         if (!s || !(key in s)) problems.push(where + ': steps[' + i + '] missing "' + key + '"');
       }
     });
@@ -511,12 +514,15 @@ function main() {
       depositAmount: escapeHtml(settings.depositAmount),
       firstRunUnits: escapeHtml(settings.firstRunUnits),
       // pre-built HTML fragments
-      galleryHtml: galleryHtml(page.gallery),
+      // First gallery item is the big hero image; the rest form the strip.
+      heroMain: escapeHtml(page.gallery[0].src),
+      heroMainAlt: escapeHtml(page.gallery[0].alt),
+      galleryHtml: galleryHtml(page.gallery.slice(1)),
+      saveAmount: escapeHtml(Number(settings.priceRetail) - Number(settings.priceFounding)),
       whyStatsHtml: whyStatsHtml(page.whyStats),
       problemBodyHtml: parasHtml(page.problemBody),
       whyBodyHtml: parasHtml(page.whyBody),
       stepsHtml: stepsHtml(page.steps),
-      offerBulletsHtml: bulletsHtml(page.offerBullets),
       faqHtml: faqHtml(page.faq),
       depositBlockHtml: depositBlockHtml,
       communityBlockHtml: communityBlockHtml,

@@ -9,8 +9,7 @@
     "eyebrow": "For weak hands from CMT",
     "h1": "A glove that helps your hand grip again.",
     "lead": "Turn the dial at your wrist. The glove closes your hand and holds on. Open the jar. Turn the key. Hold your fork. No motor. No battery. Nothing to charge.",
-    "heroProof": "First run: 500 gloves. Founding members pay $349, not $399.",
-    "ctaLabel": "Save my spot",
+    "ctaLabel": "Reserve my spot",
     "gallery": [
       { "src": "hero.webp", "alt": "A gloved hand turning a door handle", "caption": "Turn a door handle" },
       { "src": "hero-jar.webp", "alt": "Two gloved hands opening a glass jar", "caption": "Open a jar" },
@@ -33,22 +32,15 @@
       { "big": "Under 1 in 10", "small": "have anything at all for their hands" }
     ],
     "steps": [
-      { "n": 1, "head": "Put it on", "body": "It is a thin glove. On in seconds, with one hand." },
-      { "n": 2, "head": "Turn the dial", "body": "The dial closes your hand. Press it against a table if that is easier." },
-      { "n": 3, "head": "Grip", "body": "The glove holds on so your muscles do not have to. It lets go when you choose." }
+      { "n": 1, "head": "Put it on", "body": "It is a thin glove. On in seconds, with one hand.", "img": "ph-dial.svg", "alt": "Placeholder photo: the dial at the wrist" },
+      { "n": 2, "head": "Turn the dial", "body": "The dial closes your hand. Press it against a table if that is easier.", "img": "hero.webp", "alt": "A gloved hand turning a door handle" },
+      { "n": 3, "head": "Grip", "body": "The glove holds on so your muscles do not have to. It lets go when you choose.", "img": "hero-jar.webp", "alt": "Two gloved hands opening a glass jar" }
     ],
     "proofHead": "Meet Mushruf, the first person to wear it.",
     "proofStory": "Mushruf is a close friend of our founder. He has CMT. The first Capstan was built for him, and he got it free. He has worn it every day for six weeks. With it on, he opens door handles on the first try. His result is his own. Yours may differ.",
     "proofLab": "In our lab, he could squeeze about four times harder with the glove on. One person, one day. Not a promise.",
-    "proofCreds": "Built by engineers who made hardware at Apple. Red Dot design award, 2026. Patent filed.",
-    "offerHead": "One glove. One price. You own it.",
-    "offerBullets": [
-      "$399. Pay once. No subscription.",
-      "Founding members pay $349.",
-      "First run: 500 gloves.",
-      "Nothing to charge. Nothing to replace."
-    ],
     "faq": [
+      { "q": "How much will it cost?", "a": "$399, one time. No subscription. Founding members on the list pay $349. Joining the list today costs nothing." },
       { "q": "Does it fit the left hand or the right hand?", "a": "Both. We make left and right gloves. You can wear one on each hand." },
       { "q": "How does sizing work?", "a": "Each glove is made to fit your hand. After you sign up, we send a short guide with three easy measurements." },
       { "q": "Will it work for my type of CMT?", "a": "Capstan works from the outside of your hand. It closes your fingers and holds them. Your CMT type does not matter. Fit does, and we check fit with you before your glove ships." },
@@ -56,7 +48,6 @@
       { "q": "Can I put it on with one hand?", "a": "Capstan is built for one-handed use. We check this with you at your fitting. A short survey after you sign up asks which hand you use." },
       { "q": "What if it does not work for me?", "a": "Send it back within 30 days for a full refund. One email is all it takes." },
       { "q": "When does it ship?", "a": "The first 500 gloves ship this fall. People on the list order first." },
-      { "q": "Can I pay with an HSA or FSA card?", "a": "We do not know yet. We will email the list the moment we know." },
       { "q": "I am researching this for a parent. What should I do?", "a": "Join the list for them. We will send a one-page guide in plain words that you can print and hand over." }
     ],
     "finalHead": "Save your spot in the first 500.",
