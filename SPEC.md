@@ -37,6 +37,9 @@ capstan-funnel/
   "webhookUrl": "",
   "clarityId": "xtssf778gc",
   "siteUrl": "https://humankindbionics.com",
+  "founderName": "Muhammad Farhan Hossain",
+  "founderUrl": "https://muhammadfhossain.github.io/GKP/",
+  "founderLinkedIn": "https://www.linkedin.com/in/mfarhanh/",
   "control": "capstan-cmt",
   "sequentialN": 300,
   "priceRetail": 399,
@@ -55,6 +58,8 @@ Server-only env vars:
 `clarityId`: Microsoft Clarity project id. When it is a non-empty string, build.js injects the Clarity tag into the `<head>` of every built page (landing and thanks). When empty, nothing is injected. Note: `www.clarity.ms` is the second allowed external origin, besides Google Fonts.
 
 `siteUrl`: the public URL of the live site. build.js bakes it into the thanks-page share block: the mailto body and the plain-text "send this link" line, so sharing works without JS.
+
+`founderName`, `founderUrl`, `founderLinkedIn`: the founder's full name, the URL of his own page, and his LinkedIn profile. build.js uses them to build an Organization JSON-LD block that it injects into the `<head>` of every built page. `founderUrl` and `founderLinkedIn` must be plain http(s) URLs or the build fails. An empty `founderName` drops the `founder` property and keeps the rest of the block. This is structured data only: no visible link, no external request, so the zero-external-links rule and the two-allowed-origins rule are both unchanged.
 
 ## Variant config schema (variants/*.json)
 
@@ -99,6 +104,7 @@ build.js validates required fields and fails loudly on missing ones.
 - Copies template/shared.css -> dist/shared.css and assets/* -> dist/assets/.
 - Injects a small inline JS snippet (defined once in build.js, embedded in both templates) that: reads variant id + session id, sends events via `navigator.sendBeacon('/e', ...)` with fetch fallback: pageview on load, scroll_50 / scroll_90 once each, form_start on first focus of email input, ty_pageview / deposit_click / community_click / share_click on the thanks page. De-dupes per page load.
 - When settings.clarityId is a non-empty string, injects the Microsoft Clarity tag into the `<head>` of every built page (landing and thanks). Empty string injects nothing.
+- Injects an Organization JSON-LD block into the `<head>` of every built page (landing and thanks), the same way the Clarity tag is injected: `name` from settings.companyName, `url` from settings.siteUrl, `email` from settings.contactEmail, and `founder` as a Person with `name` from settings.founderName, `url` from settings.founderUrl, and `sameAs` holding settings.founderLinkedIn. `<` and `&` are written as JSON unicode escapes so the block cannot close the script element early.
 - Bakes settings.siteUrl into the thanks-page share block: the mailto body and the plain-text "send this link" line, so sharing works without JS.
 - Output: dist/<variantId>/index.html for each variant.
 
