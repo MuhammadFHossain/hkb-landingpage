@@ -390,7 +390,8 @@ function validateSettings(settings) {
   const problems = [];
   const required = [
     'productName', 'companyName', 'contactEmail', 'stripeLink', 'communityUrl',
-    'webhookUrl', 'clarityId', 'siteUrl', 'control', 'sequentialN',
+    'webhookUrl', 'clarityId', 'siteUrl', 'founderName', 'founderUrl',
+    'founderLinkedIn', 'control', 'sequentialN',
     'priceRetail', 'priceFounding', 'depositAmount', 'firstRunUnits'
   ];
   for (const key of required) {
@@ -428,6 +429,47 @@ function main() {
     : '';
   const withClarity = (html) =>
     claritySnippet ? html.replace('</head>', '  ' + claritySnippet + '\n</head>') : html;
+
+  // Organization JSON-LD: injected into the <head> of every built page, the
+  // same way the Clarity snippet is. It names the company and its founder so
+  // search engines can tie this site to him. Structured data only. It adds no
+  // visible link and no external request, so the no-external-links rule and
+  // the two-allowed-origins rule both still hold.
+  const founderName = String(settings.founderName || '').trim();
+  const founderUrl = String(settings.founderUrl || '').trim();
+  const founderLinkedIn = String(settings.founderLinkedIn || '').trim();
+  for (const [key, value] of [['founderUrl', founderUrl], ['founderLinkedIn', founderLinkedIn]]) {
+    if (value && !/^https?:\/\/[^\s"'<>]+$/.test(value)) {
+      fail('settings.json: ' + key + ' must be a plain http(s) URL');
+    }
+  }
+
+  const organization = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: String(settings.companyName || '').trim(),
+    email: String(settings.contactEmail || '').trim()
+  };
+  if (siteUrl) organization.url = siteUrl;
+  if (founderName) {
+    const founder = { '@type': 'Person', name: founderName };
+    if (founderUrl) founder.url = founderUrl;
+    // sameAs lists the founder's profiles elsewhere. His entity home is
+    // already the url, so it is not repeated here.
+    const founderSameAs = [founderLinkedIn].filter(Boolean);
+    if (founderSameAs.length) founder.sameAs = founderSameAs;
+    organization.founder = founder;
+  }
+
+  // Escape the two sequences that could end the script element early. The rest
+  // is plain JSON from settings.json.
+  const orgJsonLd =
+    '<script type="application/ld+json">' +
+    JSON.stringify(organization).replace(/</g, '\\u003c').replace(/&/g, '\\u0026') +
+    '</script>';
+  const withOrgJsonLd = (html) => html.replace('</head>', '  ' + orgJsonLd + '\n</head>');
+
+  const withHeadInjections = (html) => withOrgJsonLd(withClarity(html));
 
   let pageTemplate = fs.readFileSync(path.join(TEMPLATE_DIR, 'page.html'), 'utf8');
   let thanksTemplate = fs.readFileSync(path.join(TEMPLATE_DIR, 'thanks.html'), 'utf8');
@@ -537,8 +579,8 @@ function main() {
 
     const outDir = path.join(DIST, config.id);
     fs.mkdirSync(outDir, { recursive: true });
-    fs.writeFileSync(path.join(outDir, 'index.html'), withClarity(render(pageTemplate, map, 'page.html')));
-    fs.writeFileSync(path.join(outDir, 'thanks.html'), withClarity(render(thanksTemplate, map, 'thanks.html')));
+    fs.writeFileSync(path.join(outDir, 'index.html'), withHeadInjections(render(pageTemplate, map, 'page.html')));
+    fs.writeFileSync(path.join(outDir, 'thanks.html'), withHeadInjections(render(thanksTemplate, map, 'thanks.html')));
     console.log('built dist/' + config.id + '/ (' + config.status + ')');
   }
 

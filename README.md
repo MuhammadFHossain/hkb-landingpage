@@ -42,6 +42,7 @@ All of these live in `settings.json`. Rebuild and push after each change.
 - [ ] `webhookUrl`: where each new signup is POSTed as JSON. Point it at your email tool (Zapier, Make, or a direct endpoint).
 - [x] `clarityId`: already set (`xtssf778gc`). Microsoft Clarity session recordings.
 - [x] `siteUrl`: already set (`https://humankindbionics.com`). Used in the share links on the thanks page.
+- [x] `founderName`, `founderUrl`, `founderLinkedIn`: already set. They build the Organization JSON-LD in the `<head>` of every page, which tells search engines who founded the company. Structured data only. Nothing is shown on the page and nothing extra is loaded.
 
 ## Add or pause a variant
 
