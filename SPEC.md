@@ -38,7 +38,7 @@ capstan-funnel/
   "clarityId": "xtssf778gc",
   "siteUrl": "https://humankindbionics.com",
   "founderName": "Muhammad Farhan Hossain",
-  "founderUrl": "https://muhammadfhossain.github.io/GKP/",
+  "founderUrl": "https://farhanhossain.com/",
   "founderLinkedIn": "https://www.linkedin.com/in/mfarhanh/",
   "control": "capstan-cmt",
   "sequentialN": 300,
